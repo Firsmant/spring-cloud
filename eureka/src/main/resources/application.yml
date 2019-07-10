@@ -1,0 +1,8 @@
+server:
+  port: 1111
+eureka:
+  client:
+    registerWithEureka: false           # 是否注册到Eureka Server
+    fetchRegistry: false                 # 是否从Eureka Server 中获取注册信息
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
