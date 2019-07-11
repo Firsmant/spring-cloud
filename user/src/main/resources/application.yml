@@ -16,3 +16,12 @@ spring:
       org.hibernate: INFO
       org.hibernate.type.descriptor.sql.BasicBinder: TRACE
       org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+  application:
+    name: user #注册到Eureka Server上的名称
+eureka:
+  client:
+    service-url:
+      # 将自己的IP注册到Eureka Server上
+      defaultZone: http://peer2:8762/eureka/,http://peer1:8761/eureka/,http://localhost:1111/eureka/
+    instance:
+      prefer-io-address: true
