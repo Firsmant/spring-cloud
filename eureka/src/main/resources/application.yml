@@ -5,4 +5,4 @@ eureka:
     registerWithEureka: false           # 是否注册到Eureka Server
     fetchRegistry: false                 # 是否从Eureka Server 中获取注册信息
     serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
+      defaultZone: http://localhost:1111/eureka/  # 设置与Eureka Server 交互的地址 查询服务/注册服务需要
