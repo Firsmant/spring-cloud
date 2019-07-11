@@ -1,2 +1,11 @@
 server:
   port: 8100
+spring:
+  application:
+    name: movie
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+    instance:
+      prefer-ip-address: true
