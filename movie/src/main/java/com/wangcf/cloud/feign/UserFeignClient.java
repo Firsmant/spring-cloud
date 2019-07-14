@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.websocket.server.PathParam;
 
-@FeignClient(name = "user", url = "localhost:8000/")
+@FeignClient(name = "user")
 public interface UserFeignClient {
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     public User findById(@PathVariable("id") Long id);
