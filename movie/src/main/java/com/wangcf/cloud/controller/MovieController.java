@@ -1,5 +1,6 @@
 package com.wangcf.cloud.controller;
 
+import com.wangcf.cloud.feign.UserFeignClient;
 import com.wangcf.cloud.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +19,14 @@ import org.springframework.web.client.RestTemplate;
 public class MovieController {
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private UserFeignClient userFeignClient;
 
-    private String URL = "";
 
     @GetMapping("/getUserById/{id}")
     public User getUserById(@PathVariable Long id) {
-        User user = restTemplate.getForObject("http://localhost:8000/user/" + id, User.class);
+        //User user = restTemplate.getForObject("http://localhost:8000/user/" + id, User.class);
+        User user = userFeignClient.findById(id);
         return user;
     }
 }
